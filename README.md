@@ -1,2 +1,0 @@
-# Dimension
-A blog system.
