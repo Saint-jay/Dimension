@@ -5,19 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./app.js",
-    "start": "pm2 start ./app.js --name my-node-api"
+    "dev": "nodemon ./server/app.js",
+    "start": "pm2 start ./server/app.js --name my-node-api"
     
   },
   "author": "saint jay",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2"
   },
   "devDependencies": {
-    "mysql": "^2.15.0",
-    "nodemon": "^1.17.5",
-    "pm2": "^2.10.4"
   }
 }
