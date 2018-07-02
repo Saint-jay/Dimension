@@ -2,7 +2,7 @@
     <header>
       <div class="nav-container clearfix">
         <div class="profile-avatar clearfix fl">
-          <img class="fl" src="../../assets/img/avatar.jpg" alt="">
+          <img class="fl" src="../../assets/img/avatar_min.png" alt="">
           <!-- <img class="fl" src="http://cdn.zsjfish.com/5105ded6afea8.min.jpg" alt=""> -->
           <div class="avatar-info fl">
             <h3>{{userInfo.user.name}}</h3>
