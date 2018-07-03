@@ -1,34 +1,19 @@
 
-let express = require('express');
-let db = require('../utils/mysql-util');
-let du = require('../utils/data-util');
-let app = express();
+const db = require('../utils/mysql-util');
+const du = require('../utils/data-util');
 
-
-let str = '';
-let user = '';
-
-
-// 查询实例
-db.query(db.getAllData('user'), (error, results, fields) => {
-    if (error) throw error;
-    user = JSON.stringify(results);
-    user = user.substring(1, user.length - 1);
-});
-
-db.query(db.getAllData('nav_list'), (error, results, fields) => {
-    if (error) throw error;
-    str = JSON.stringify(results);
-});
-
-
-app.set('env', 'production'); 
-app.get('/api/user_info', function(req, res, next) {
-    let data = du.result({
-                    user: JSON.parse(user),
-                    navList: JSON.parse(str)
-                }, res.statusCode)
-    res.send(data)
+const express = require('express')
+const router = express.Router()
+ 
+router.get('/user_info', function (req, res) {
+    db.query(`${db.getAllData('user')}; ${db.getAllData('nav_list')}`, (err, data) => {
+        data = JSON.stringify(data);
+        data = JSON.parse(data);
+        res.send(du.result({
+                    user: data[0][0],
+                    navList: data[1]
+                }, res.statusCode))
+    })
 })
-
-app.listen(3000);
+ 
+module.exports = router

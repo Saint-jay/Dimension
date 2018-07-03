@@ -2,12 +2,13 @@
  * Created by saint-jay on 2018/1/14.
  */
 
-// let express = require('express');
-
-
-// let app = express();
-
-let user = require('./router/user');
+const express = require('express');
+const app = express()
+const userRouter = require('./router/user');
+ 
+app.use('/api', userRouter);
+ 
+app.listen(3000);
 
 
 
