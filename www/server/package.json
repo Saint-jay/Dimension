@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./app.js",
-    "start": "pm2 start ./app.js --name my-node-api"
+    "start": "pm2 start ./app.js --name my-node-api",
+    "delete": "pm2 delete all"
     
   },
   "author": "saint jay",

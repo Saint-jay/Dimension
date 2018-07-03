@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./server/app.js",
-    "start": "pm2 start ./server/app.js --name my-node-api"
+    "client": "webpack-dev-server --inline --progress --config ./client/build/webpack.dev.conf.js",
+    "server": "pm2 start ./server/app.js --name my-node-api",
+    "dev": "npm run server && npm run client"
     
   },
   "author": "saint jay",
@@ -14,5 +15,8 @@
   "dependencies": {
   },
   "devDependencies": {
+    "webpack-dev-server": "^2.9.1",
+    "nodemon": "^1.17.5",
+    "pm2": "^2.10.4"
   }
 }
