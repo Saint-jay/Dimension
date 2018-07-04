@@ -3,14 +3,14 @@
       <div class="nav-container clearfix">
         <div class="profile-avatar clearfix fl">
           <!-- <img class="fl" src="../../assets/img/avatar_min.png" alt=""> -->
-          <img class="fl" src="http://cdn.zsjfish.com/5105ded6afea8.min.jpg" alt="">
+          <img class="fl" v-lazy="ava" alt="">
           <div class="avatar-info fl">
             <h3>{{user.name}}</h3>
             <p>{{user.describe}}</p>
           </div>
         </div>
         <nav class="clearfix fl">
-          <a class="fl" :class="{'active': index == navIndex}" v-for="(nav, index) in navList" :key="index" href="javascript:;" @click="changeUrl(index, nav)">{{ nav.name }}</a>
+          <a class="fl" :class="{'active': index == navIndex}" v-for="(nav, index) in navList" :key="index" href="javascript:;" @click="changeUrl(index, nav)">{{ nav.type }}</a>
         </nav>
       </div>
     </header>
@@ -22,6 +22,7 @@ let commonApi = new CommonApi();
 export default {
   data() {
     return {
+      ava: 'http://cdn.zsjfish.com/5105ded6afea8.min.jpg',
       navIndex: "",
       user: {},
       navList: []
@@ -29,12 +30,14 @@ export default {
   },
   computed: {},
   created() {
+    // this.getUser();
+  },
+  mounted() {
     this.getUser();
   },
   methods: {
     getUser() {
       this.$apiUtil.responseHandler(commonApi.getUser()).then(suc => {
-        // this.$store.state.userInfo
         this.user = suc.result.user;
         this.navList = suc.result.navList;
         this.changeUrl(0, this.navList[0]);

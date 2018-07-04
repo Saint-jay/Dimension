@@ -6,7 +6,7 @@ module.exports = {
         return {
             result: result,
             code: code,
-            message: 'ok'
+            message: 'success'
         }
     }
 
