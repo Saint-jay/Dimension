@@ -1,0 +1,27 @@
+<template>
+    <div>
+        <!-- <img v-lazy="img" alt="404"> -->
+        <img v-lazy="img" alt="">
+    </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      img: require('../../static/img/404.png')
+    };
+  },
+  mounted() {}
+};
+</script>
+
+<style lang="scss" scoped>
+div {
+  text-align: center;
+  padding: 250px 0 150px;
+  img {
+    width: 500px;
+  }
+}
+</style>

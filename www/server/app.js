@@ -4,8 +4,8 @@
 
 const express = require('express');
 const app = express()
-const userRouter = require('./router/user_info');
- 
+const userRouter = require('./router/index');
+
 app.use('/api', userRouter);
  
 app.listen(3000);
