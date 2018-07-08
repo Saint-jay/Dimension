@@ -1,7 +1,7 @@
 <template>
   <div>
     <four-zero-four v-show="hasShow" />
-    <nuxt v-show="!hasShow"/>
+    <nuxt/>
   </div>
   
 </template>

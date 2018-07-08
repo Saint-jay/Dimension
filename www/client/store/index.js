@@ -17,5 +17,14 @@ export const actions = {
     const res = await service.getAuth()
                       .catch(err => console.error(err))
     commit('user/SET_USER_SUCCESS', res.result || {})
+  },
+
+  // 文章详情
+  async getArt ({ commit }, data) {
+    const res = await service.getArt(data)
+                      .catch(err => console.error(err))
+    commit('article/SET_DETAILS', res.result || {})
   }
+
+
 }
