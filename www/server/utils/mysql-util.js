@@ -19,7 +19,7 @@ module.exports = {
     },
 
     // mysql查询语法
-    getAllData (surfaceName) {
+    getData (surfaceName) {
         return 'SELECT * FROM ' + surfaceName;
     }
 

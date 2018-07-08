@@ -4,7 +4,7 @@
  */
 
 export const state = () => ({
-    hasShow: true
+    hasShow: false
 })
 
 export const mutations = {

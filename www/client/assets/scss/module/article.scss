@@ -1,0 +1,145 @@
+@import '../base/variable.scss';
+
+.article {
+    width: 1190px;
+    position: relative;
+    padding: 80px 0px 20px;
+    margin: 0px auto;
+
+    .article-layout{
+        // height: 100px;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid $Boder-Line-color;
+        box-shadow: 0 2px 4px rgba(0,0,0,.24);
+    }
+}
+
+.breadcrumb {
+    padding: 20px;
+    border-bottom: 1px dashed #000;
+
+    .el-breadcrumb {
+        font-size: 16px;
+    }
+    .is-link {
+        color: $Main-color;
+        :hover {
+            color: #5cadff;
+        }
+    }
+}
+
+.article-end-back {
+    padding: 20px;
+    border-top: 1px dashed #000;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+    
+    .fa {   
+        font-weight: 900;
+        color: $Main-color;
+        span {
+            margin-left: 10px;
+        }
+    }
+}
+
+.article-end-back:hover {
+    border-top: 1px dashed $Main-color;
+    background-color: $Main-color;
+
+    .fa {
+        color: #fff;
+    }
+}
+
+.article-title {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+    color: #757575;
+}
+
+.article-au-time {
+    font-size: 14px;
+    text-align: center;
+    color: #757575;
+
+    .el-icon-time {
+        margin-left: 20px;
+    }
+    time {
+        margin-left: 5px;
+    }
+}
+
+
+.article-md {
+    padding: 50px 180px 100px;
+    color: #24292e;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+
+// markdonw 文章样式
+// .article-md
+.article-md pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #282B33;
+    border-radius: 3px;
+}
+
+.article-md blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: .25em solid #bdbdbd;
+}
+
+.article-md img {
+    max-width: 100%;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 1px 20px  rgba(0,0,0,.5);
+    border-style: none;
+    border-radius: 4px;
+}
+
+.article-md h2 {
+    font-size: 1.5em;
+}
+.article-md h1, .article-md h2 {
+    padding-bottom: .3em;
+    border-bottom: 1px solid #eaecef;
+}
+.article-md h1, .article-md h2, .article-md h3, .article-md h4, .article-md h5, .article-md h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.article-md ol, .article-md ul {
+    padding-left: 2em;
+}
+
+.article-md blockquote, .article-md dl, .article-md ol, .article-md p, .article-md pre, .article-md table, .article-md ul {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.article-md code {
+    color: #AAB1BE;
+}

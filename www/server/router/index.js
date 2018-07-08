@@ -5,4 +5,6 @@ const router = express.Router()
  
 router.get('/user_info', (req, res) => sql_api.sql_user_info(res) )
 
+router.get('/article/:id', (req, res) => sql_api.sql_art_info(req, res) )
+
 module.exports = router

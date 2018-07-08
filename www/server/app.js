@@ -4,10 +4,16 @@
 
 const express = require('express');
 const app = express()
-const userRouter = require('./router/index');
+const router = require('./router/index');
 
-app.use('/api', userRouter);
- 
+// var allowCrossDomain = function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     next();
+// };
+// app.use(allowCrossDomain);
+
+app.use('/api', router);
+
 app.listen(3000);
 
 

@@ -4,7 +4,7 @@
         <div class="profile-avatar clearfix fl">
           <img class="fl" v-lazy="ava" alt="">
           <div class="avatar-info fl">
-            <h3>{{userInfo.user.name}}</h3>
+            <h1>{{userInfo.user.name}}</h1>
             <p>{{userInfo.user.describe}}</p>
           </div>
         </div>
@@ -26,7 +26,8 @@ import '~/assets/scss/components/_header.scss';
 export default {
   data() {
     return {
-      ava: "http://cdn.zsjfish.com/5105ded6afea8.min.jpg",
+      // ava: "https://zsjfish-data.oss-cn-beijing.aliyuncs.com/cdn/images/avatar.max.jpg",
+      ava: "",
       navIndex: ""
     };
   },

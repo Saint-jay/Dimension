@@ -10,7 +10,7 @@ module.exports = {
   },
   // plugins
   plugins: [
-    // { src: '~/plugins/element-ui.js', ssr: true },
+    { src: '~/plugins/element-ui.js', ssr: true },
     { src: '~/plugins/vue-lazyload.js', ssr: false }
   ],
   /*
@@ -55,7 +55,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // { rel: 'stylesheet', href: '//unpkg.com/element-ui/lib/theme-chalk/index.css' },
+      { rel: 'stylesheet', href: '//unpkg.com/element-ui/lib/theme-chalk/index.css' },
       { rel: 'stylesheet', href: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
     ]
   },
@@ -64,7 +64,9 @@ module.exports = {
   */
   css: [
     { src: '~assets/scss/base/reset.scss', lang: 'scss' },
-    { src: '~assets/scss/common/section.scss', lang: 'scss' }
+    { src: '~assets/scss/common/section.scss', lang: 'scss' },
+    { src: 'highlight.js/styles/atom-one-dark.css', lang: 'scss' },
+    
   ],
   modules: [
     '@nuxtjs/axios',
