@@ -1,8 +1,8 @@
 <template>
     <section>
-        <div class="article">
+        <div class="body-layout">
 
-            <div class="article-layout">
+            <div class="article-layout" v-loading="!details.cd">
                 <!-- 面包屑 -->
                 <div class="breadcrumb">
                     <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -15,23 +15,22 @@
                         <el-breadcrumb-item v-if="details.title">{{ details.title }}</el-breadcrumb-item>
                     </el-breadcrumb>
                 </div>
+
+
                 <!-- title -->
-                <h2 class="article-title">{{ details.title }}</h2>
+                <h2 class="article-title" v-if="details.title">{{ details.title }}</h2>
                 <!-- 作者 and 时间 -->
-                <p class="article-au-time">
+                <p class="article-au-time" v-if="details.author && details.updated_at">
                     <i class="fa fa-user-o">
                         <time>{{ details.author }}</time>
                     </i>
                     <i class="el-icon-time">
-                        <time>{{ details.updated_at }}</time>
+                        <time>{{ details.updated_at | date('yyyy-MM-dd hh:mm') }}</time>
                     </i>
                 </p>
-                
-                
                 <!-- md -->
-                <div class="article-md" v-html="contentMD">
-                </div>
-
+                <div class="article-md markdown-body" v-html="contentMD"></div>
+                
 
                 <!-- 返回首页 -->
                 <div class="article-end-back">
@@ -39,9 +38,6 @@
                          <span>The end</span>
                     </i>
                 </div>
-            
-
-
 
             </div>
 
@@ -51,27 +47,7 @@
 
 <script>
 import "~/assets/scss/module/article.scss";
-import marked from "marked";
-import hljs from "highlight.js";
-
-let renderMD = new marked.Renderer();
-marked.setOptions({
-  renderer: renderMD,
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: false,
-  smartLists: true,
-  smartypants: false,
-  highlight: function(code, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      return hljs.highlight(lang, code, true).value;
-    } else {
-      return hljs.highlightAuto(code).value;
-    }
-  }
-});
+import markdown from '~/plugins/marked'
 export default {
   data() {
     return {
@@ -80,7 +56,7 @@ export default {
   },
   computed: {
     contentMD() {
-      return marked(this.$store.state.article.details.body_md, { sanitize: true });
+      return markdown(this.details.body_md, false, false).html
     },
     details() {
         return this.$store.state.article.details
