@@ -10,8 +10,11 @@ module.exports = {
   },
   // plugins
   plugins: [
+    { src: '~/plugins/marked.js' },
+    { src: '~/plugins/highlight.js' },
     { src: '~/plugins/element-ui.js', ssr: true },
-    { src: '~/plugins/vue-lazyload.js', ssr: false }
+    { src: '~/plugins/vue-lazyload.js', ssr: true },
+    { src: '~/plugins/filter.js' }
   ],
   /*
   ** Build configuration
@@ -21,6 +24,8 @@ module.exports = {
     // 将重复引用的(第三方/自有)模块添加到vendor.bundle.js
     vendor: [
       'axios',
+      'marked',
+      'highlight.js',
       'element-ui',
       'vue-lazyload'
     ],
