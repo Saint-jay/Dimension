@@ -1,18 +1,24 @@
 <template>
     <div>
-        <!-- <img v-lazy="img" alt="404"> -->
         <img v-lazy="img" alt="">
     </div>
 </template>
 
 <script>
 export default {
+  props: ["error"],
   data() {
     return {
-      img: require('../../static/img/404.png')
+      img: require("../static/img/404.png")
     };
   },
-  mounted() {}
+  mounted () {
+    this.$store.commit('options/SET_ERROR_PAGE', true)
+  },
+
+  beforeDestroy () {
+    this.$store.commit('options/SET_ERROR_PAGE', false)
+  }
 };
 </script>
 
