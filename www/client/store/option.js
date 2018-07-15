@@ -4,11 +4,11 @@
  */
 
 export const state = () => ({
-    hasShow: false
+    show: false
 })
 
 export const mutations = {
-  SET_HAS_SHOW(state, bool) {
-    state.hasShow = bool
+  SET_ERROR_PAGE(state, bool) {
+    state.show = bool
   }
 }

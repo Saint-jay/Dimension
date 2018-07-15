@@ -63,7 +63,6 @@ export default {
     }
   },
   created() {
-    this.$store.commit("option/SET_HAS_SHOW", false);
     this.$store.dispatch('getArt', this.cd)
   }
 };
